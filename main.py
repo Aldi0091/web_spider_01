@@ -19,6 +19,8 @@ try:
     counter = 0
     for sku in all_urls_list:
         logger.info(f"scraping the web page for data: {sku}")
+        counter += 1
+        print(f"INFO: PLEASE WAIT UNTIL COMPLETE {len(all_urls_list - counter)}")
         ret = DirectParse.get_produkt_info(sku)
         outcome[sku] = ret
     Url(address, outcome).update_sheet()
