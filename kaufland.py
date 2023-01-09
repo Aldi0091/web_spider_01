@@ -15,10 +15,10 @@ class KaufLand:
 
         res = requests.get(euro_to_czk_url)
 
-        with open("euro_to_czl_2.html", "w") as file:
+        with open(f"{abspath}/html/euro_to_czk_2.html", "w") as file:
             file.write(res.text)
 
-        with open("euro_to_czl_2.html") as file:
+        with open(f"{abspath}/html/euro_to_czk_2.html") as file:
             src = file.read()
 
         soup = BeautifulSoup(src, "lxml")

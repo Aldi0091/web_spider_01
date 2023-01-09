@@ -9,14 +9,15 @@ class Allegro:
     @classmethod
     def allegro(cls):
         ##
+        abspath = os.getcwd() 
         pln_to_czk_url = "https://www.xe.com/currencyconverter/convert/?Amount=1&From=PLN&To=CZK"
 
         res = requests.get(pln_to_czk_url)
 
-        with open("pln_to_czl.html", "w") as file:
+        with open(f"{abspath}/html/pln_to_czk.html", "w") as file:
             file.write(res.text)
 
-        with open("pln_to_czl.html") as file:
+        with open(f"{abspath}/html/pln_to_czk.html") as file:
             src = file.read()
 
         soup = BeautifulSoup(src, "lxml")
@@ -26,7 +27,7 @@ class Allegro:
         ##
 
 
-        abspath = os.getcwd() 
+        
         workbook = openpyxl.load_workbook(f"{abspath}/feeds/sddone_alegro.xlsm")
         worksheet = workbook.active
         counter = 0
