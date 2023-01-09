@@ -43,8 +43,8 @@ class DirectParse:
         # print(cena_with_vat.text.strip())
         return {
             "quantity": result.text.strip().replace(u'\xa0', u' '), 
-            "price without VAT": str(cena_bez_vat.text.strip().replace(u'\xa0', u' ')) + ".00",
-            "price with VAT": str(cena_with_vat.text.strip().replace(u'\xa0', u' ')) + ".00"
+            "price without VAT": cena_bez_vat.text.strip().replace(u'\xa0', u' '),
+            "price with VAT": cena_with_vat.text.strip().replace(u'\xa0', u' ')
         }
 
     

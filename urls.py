@@ -52,7 +52,7 @@ class Url:
                 quantity = 5
             for row in worksheet:
                 if str(row[0].value) in key:
-                    row[2].value = str(price)
+                    row[2].value = str(price) + ".00"
                     row[3].value = str(quantity)
         workbook.save("updated.xlsx")
 
