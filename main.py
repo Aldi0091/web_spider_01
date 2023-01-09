@@ -3,10 +3,13 @@ from async_fetch import Web
 from urls import Url
 import asyncio
 import logging
+from eprice import Eprice
+from kaufland import KaufLand
+from allegro import Allegro
 
 logging.basicConfig(filename="sample.log", level=logging.INFO)
 logger = logging.getLogger()
-address = "ORIGINALE.xlsx" # /home/aldo/SCRAPING/CZ/
+address = "ORIGINALE.xlsx" 
 empty_dict = dict()
 
 
@@ -24,3 +27,7 @@ for sku in all_urls_list:
     ret = DirectParse.get_produkt_info(sku)
     outcome[sku] = ret
 Url(address, outcome).update_sheet()
+
+Eprice.eprice()
+KaufLand.kaufland()
+Allegro.allegro()

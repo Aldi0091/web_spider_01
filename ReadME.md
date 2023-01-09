@@ -14,11 +14,9 @@ Run the spider and get updated.xlsx file
 
 `python main.py`
 
-Then run the eprice.py to updated the feed for eprice (EURO)
-
-`python eprice.py`
-
 Output feed stored in feed directory
 -------------------------------------------------------------------------
+
+
 
 
