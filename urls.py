@@ -1,5 +1,4 @@
 import openpyxl
-import csv
 
 
 class Url:
@@ -55,19 +54,3 @@ class Url:
                     row[2].value = str(price) + ".00"
                     row[3].value = str(quantity)
         workbook.save("updated.xlsx")
-
-
-
-
-
-
-
-
-        # with open("out.csv", "a") as file:
-        #     writer = csv.writer(file, delimiter =',')
-        #     writer.writerow(l)
-        # out.append(l)
-        # for col in worksheet.iter_cols(1, worksheet.max_column):
-        #     outcome_col.append(col[i].value)
-        #     print(col[i].value)
-        #     break

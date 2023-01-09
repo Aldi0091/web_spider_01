@@ -1,9 +1,6 @@
-import requests
 import aiohttp
-from aiohttp import ClientSession, web
-from fake_headers import Headers
+from aiohttp import ClientSession
 import asyncio
-import time
 import os
 
 
@@ -27,9 +24,6 @@ class Web:
             return [await response.text(), response.url]
 
     async def get_web(self):
-        # res = requests.get(url)
-        # x = len("https://www.czc.cz/")
-        # y = url.index("produkt"
   
         conn = aiohttp.TCPConnector(limit=0, ttl_dns_cache=300)
         async with aiohttp.ClientSession(connector=conn) as session:
@@ -39,9 +33,9 @@ class Web:
     async def main(self) -> list:
         """The main function that generates the aiohttp session and fetch data from urls for further formatting"""
         result = await self.get_web()
-
-        if not os.path.exists("/home/aldo/SCRAPING/CZ/shop"):
-            os.makedirs("/home/aldo/SCRAPING/CZ/shop")
+        absolutepath = os.getcwd()
+        if not os.path.exists(f"{absolutepath}/shop"): # /home/aldo/SCRAPING/CZ
+            os.makedirs(f"{absolutepath}/shop")
 
         for res in result:
             html_body = str(res[0])
@@ -50,13 +44,5 @@ class Web:
             y = url.index("produkt")
             with open(f"/home/aldo/SCRAPING/CZ/shop/{url[x:(y-1)].replace('/', '_')}.html", "w") as file:
                 file.write(html_body)
-
-   
-
-# asyncio.run(Web(["https://www.czc.cz/benq-pd3205u-led-monitor-31-5/362020/produkt", "https://www.czc.cz/lg-32lq63006la-80cm/337994/produkt"]).main())
-
-
-
-
 
 

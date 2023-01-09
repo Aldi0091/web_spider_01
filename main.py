@@ -6,7 +6,7 @@ import logging
 
 logging.basicConfig(filename="sample.log", level=logging.INFO)
 logger = logging.getLogger()
-address = "/home/aldo/SCRAPING/CZ/ORIGINALE.xlsx"
+address = "ORIGINALE.xlsx" # /home/aldo/SCRAPING/CZ/
 empty_dict = dict()
 
 
