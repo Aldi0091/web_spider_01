@@ -103,18 +103,11 @@ def sub():
         fi = file.read()
     with open("operation.txt", "r") as file:
         op = file.read()
-    # with open("currency.txt", "r") as file:
-    #     curr = file.read()
-    # revenue = (1 + int(entry3.get()) / 100)
 
-    # currency = drop.get()
     if op == "crawl":
         print("[INFO] PLEASE WAIT, FILE IS BEING GENERATED")
         asyncio.run(update(fi))
-    elif op == "price":
-        pass
-        # print("[INFO] PLEASE WAIT, FILE IS BEING CONVERTED")
-        # asyncio.run(price(curr, revenue))
+
     os.remove("filepath.txt")
     os.remove("operation.txt")
     print("[INFO] COMPLETED")

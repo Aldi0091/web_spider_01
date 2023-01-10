@@ -5,6 +5,10 @@ import os, shutil, sys
 
 from feeds import Eprice, KaufLand, Allegro
 
+if os.path.isfile("updated.xlsx"):
+    pass
+else:
+    raise Exception("YOU NEED TO RUN >> upd_origin script >> TO ALLOW THIS SCRIPT BE EXECUTABLE")
 
 async def price(rate, revenue, url):
     if "eprice" in url:
