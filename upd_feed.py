@@ -1,7 +1,7 @@
 import asyncio
 import customtkinter
 from customtkinter import filedialog
-import os, shutil, sys
+import os, shutil
 
 from feeds import Eprice, KaufLand, Allegro
 
