@@ -10,10 +10,13 @@ Install dependencies
 
 `pip install -r requirements.txt`
 
-Run the spider and get updated.xlsx file
+Run 1st crawler with below command
 
-`python main.py`
+`python upd_origin.py`
 
+And then run 2nd feed updating script with command
+
+`python upd_feed.py`
 
 
 

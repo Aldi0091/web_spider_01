@@ -5,7 +5,7 @@ import os
 
 class Eprice:
     @classmethod
-    def eprice(cls, rate, rev):
+    def eprice(cls, rate, rev, url):
         abspath = os.getcwd()
         headers = None
 
@@ -14,7 +14,7 @@ class Eprice:
 
         rix = []
         for row in worksheet:
-            with open(f'{abspath}/feeds/eprice feed.csv', "r") as f:
+            with open(f"{url}", "r") as f:
                 reader = csv.reader(f)
                 headers = next(reader)
                 for r in reader:
@@ -75,11 +75,11 @@ class KaufLand:
 
 class Allegro:
     @classmethod
-    def allegro(cls, rate, rev):
+    def allegro(cls, rate, rev, url):
         ##
         abspath = os.getcwd() 
         
-        workbook = openpyxl.load_workbook(f"{abspath}/feeds/sddone_alegro.xlsm")
+        workbook = openpyxl.load_workbook(f"{url}")
         worksheet = workbook.active
         counter = 0
         new_header = None
