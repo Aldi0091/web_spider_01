@@ -8,6 +8,8 @@ beautifulsoup4==4.11.1
 bs4==0.0.1
 certifi==2022.12.7
 charset-normalizer==2.1.1
+customtkinter==5.0.3
+darkdetect==0.8.0
 et-xmlfile==1.1.0
 exceptiongroup==1.1.0
 fake-headers==1.0.2
