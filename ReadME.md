@@ -14,7 +14,10 @@ Run the spider and get updated.xlsx file
 
 `python main.py`
 
-Output feed stored in feed directory
+There will be generated and fulfilled following files
+
+> updated.xlsx - it is updated data for ORIGINALE.xlsx
+> in the feeds directory - all with updated tags are new files with data from updated.xlsx
 -------------------------------------------------------------------------
 
 
